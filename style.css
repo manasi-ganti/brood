@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Yesteryear&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #e9be9b;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+
+
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+
+#soundContainer {
+    position: relative;
+    left: 650px;
+    /*display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px; */
+}
+
+.flexContainer {
+    display: flex;
+}
+.flexChild {
+    flex:1;
+}
+
+
+#myContainer {
+ /*position: relative;*/
+}
+
+.shop {
+    position: relative;
+    top:var(--t);
+    width: var(--w);
+    height: 100px;
+}
+
+.imageContainer {
+    margin-left: 90px;
+    background: var(--b);
+    width: var(--w);
+    height: var(--h);
+    position: absolute;
+    transform: translate(-15%, -0%);
+}
+
+
+.imageContainer1 {
+    background: url(https://3tsll33cscvk11pae33oze51-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/seattle-top-coffee-shops-victrola.png);
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    transform: translate(-50%, -0%);
+    left: 25%;
+}
+.imageContainer2 {
+    background: url(https://ae01.alicdn.com/kf/HTB1m1kkmr1YBuNjSszhq6AUsFXa2/220ml-Ceramic-Coffee-Mug-Simple-Coffee-Cup-Saucer-Set-with-Spoon-Coffee-Shop-Mug.jpg);
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    transform: translate(-50%, -0%);
+    left: 25%;
+}
+.imageContainer3 {
+    background: url(https://st2.depositphotos.com/1875497/6137/i/600/depositphotos_61375725-stock-photo-coffee-mug-in-coffee-shop.jpg);
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    transform: translate(-50%, -0%);
+    left: 25%;
+}
+
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+.coffeeBlock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+}
+
+.coffee {
+    background-color: #d29473; /*#501E03;*/
+    height: 20px;
+    border-radius: 50%;
+    z-index: 99;
+    position: relative;
+    margin: 0 auto -28px;
+    width: 233px;
+}
+
+.lid {
+    background-color: #fff;
+    height: 20px;
+    border-radius: 50%;
+    border: 8px solid #ddd;
+    z-index: 9;
+    position: relative;
+    /*box-shadow: 0 1px 3px 0 rgb(0 0 0 / 51%);   if togo*/
+}
+
+.togocup {
+    margin: -18px auto 0;
+    background-color: #fff;
+    height: 300px;
+    width: 100%;
+    max-width: 240px;
+    /* border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%; */
+    clip-path: polygon(50% 250%, 0 0, 100% 0);
+}
+
+.cup {
+    margin: -18px auto 0;
+    width: 250px;
+    height: 200px;
+    box-sizing: border-box;
+    border: 7px solid #fff;
+    border-radius: 5px 5px 95px 95px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.handle {
+    position: relative;
+    top: 10px;
+    left: 350px;
+    width: 40px;
+    height: 70px;
+    background: transparent;
+    box-sizing: border-box;
+    border: 5px solid #fff;
+    border-radius: 0 25px 80px 0;
+}
+
+
+.bottom {
+    background-color: #fff;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 9;
+    position: relative;
+    width: 144px;
+    margin: -20px auto 0; /*-10 if togo*/
+}
+
+.vapour {
+    position: relative;
+    left: var(--l);
+    top: var(--t);
+    display: flex;
+    z-index: 1;
+    padding: 0 40px;
+    /*justify-content: center;*/
+}
+
+.vapour span {
+    position: relative;
+    bottom: 50px;
+    display: block;
+    margin: 0 2px 50px;
+    min-width: 8px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    animation: animate 5s linear infinite;
+    opacity: 0;
+    filter: blur(10px);
+    animation-delay: calc(var(--v) * -0.5s);
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-150px) scaleX(5);
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-300px) scaleX(10);
+    }
+}
+
+
+
+.audioPlayer {
+    position: relative;
+    top:500px;
+    width: 600px;
+    height: 100px;
+}
+
+#cafeAudioButton {
+
+}
+
+.toggleLabel{
+    margin-top: 10px; 
+    margin-right: 5px; 
+    font-family: 'Montserrat';
+}
+
+.toggleButton {
+    width:70px;
+    height:30px;
+    background: #684242;
+    border-radius:30px;
+    padding:5px;
+    transition: all 300ms ease-in-out;
+}
+
+.toggleButton > .innerCircle {
+    width:30px;
+    height:30px;
+    background: #fff;
+    border-radius: 50%; 
+    transition: all 300ms ease-in-out;
+}
+
+.toggleButton.active {
+    background: #492233;
+}
+
+.toggleButton.active > .innerCircle{
+    margin-left:40px;
+}
+
+
+/* volume slider*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+#rangeValue {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  font-weight: 400;
+  font-family: 'Montserrat';
+}
+.range {
+  width: 100px;
+  height: 15px;
+  -webkit-appearance: none;
+  background: white;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 5px;
+  margin-left: 20px;
+  margin-top: 7px;
+  /*box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);*/
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #d29473;
+  cursor: pointer;
+  border: 4px solid #333;
+  box-shadow: -407px 0 0 400px #d29473;
+}
+
+
+

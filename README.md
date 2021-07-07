@@ -1,4 +1,4 @@
-# brood
+# brood (brewed)
 inspired by imissmycafe.com and lofi.cafe
 
 current features:

@@ -18,7 +18,7 @@
           https://codepen.io/marijoha/pen/zKjvEw
           https://codepen.io/Aoyue/pen/rLExYX
           https://codepen.io/RedStarZOn/pen/GuriA
-
+          https://codepen.io/anyssa/pen/PoNBMxJ
         -->
   </head>
 
@@ -121,10 +121,10 @@
       <div class="dropdown">
         <button onclick="myFunction()" class="dropButton">drink</button>
         <div id="myDropdown" class="dropdownContent">
-          <a onclick = "document.getElementById('YouTube-video-id').value='yUpl_HQrBnM';youTubePlayerChangeVideoId();"> latte (lofi) </a>
-          <a onclick = "document.getElementById('YouTube-video-id').value='prtmoOfk28w';youTubePlayerChangeVideoId();"> cappuccino (jazz) </a> <!-- VMAPTo7RVCo -->
-          <a onclick = "document.getElementById('YouTube-video-id').value='ASrsms68wks';youTubePlayerChangeVideoId();"> mocha () </a>  <!-- https://youtu.be/ASrsms68wks https://youtu.be/1l8sMIVFSoM    https://youtu.be/4_6_D85wX9M--> 
-          <a onclick = "document.getElementById('YouTube-video-id').value='2QcwuvYKdeE';youTubePlayerChangeVideoId();"> tea (classical) </a>  <!-- https://youtu.be/Ie5koh4qvJc   https://youtu.be/GQMNer3PwUc-->
+          <a onclick = "document.getElementById('YouTube-video-id').value='yUpl_HQrBnM';youTubePlayerChangeVideoId();youTubePlayerPlay();"> latte (lofi) </a>
+          <a onclick = "document.getElementById('YouTube-video-id').value='prtmoOfk28w';youTubePlayerChangeVideoId();youTubePlayerPlay();"> cappuccino (jazz) </a> <!-- VMAPTo7RVCo -->
+          <a onclick = "document.getElementById('YouTube-video-id').value='ASrsms68wks';youTubePlayerChangeVideoId();youTubePlayerPlay();"> mocha () </a>  <!-- https://youtu.be/ASrsms68wks https://youtu.be/1l8sMIVFSoM    https://youtu.be/4_6_D85wX9M--> 
+          <a onclick = "document.getElementById('YouTube-video-id').value='2QcwuvYKdeE';youTubePlayerChangeVideoId();youTubePlayerPlay();"> tea (classical) </a>  <!-- https://youtu.be/Ie5koh4qvJc   https://youtu.be/GQMNer3PwUc-->
           <a onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> custom order </a>
         </div>
       </div>
@@ -135,8 +135,8 @@
         <input id="YouTube-video-id" type="text" value="yUpl_HQrBnM" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId();" readonly="true">
         <button onclick="youTubePlayerPlay();">Play</button>
         <button onclick="youTubePlayerPause();">Pause</button>
-        <button onclick="youTubePlayerSkip();">Skip</button>
-        <Input class="range" type="range" name="" value="0" min="0" max="100" onChange="youTubePlayerVolumeChange(this.value)"></Input> 
+        <!-- <button onclick="youTubePlayerSkip();">Skip</button> -->
+        <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="youTubePlayerVolumeChange(this.value)"></Input> 
       </span>
       <div> </div>
       <!-- <input id="YouTube-video-id" type="text" value="yG0oBPtyNb0" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId();"> -->
@@ -325,24 +325,24 @@
 
       <div class = "flexContainer">
         <p class = "toggleLabel"> milk?  .</p>
-        <div class = "toggleButton" onclick="this.classList.toggle('active'); playCafeSound()"> 
+        <div class = "toggleButton" onclick="this.classList.toggle('active'); if(this.classList.contains('active')){playCafeSound();} else (pauseCafeSound());"> 
           <div class="innerCircle"> </div>
         </div>
         <div>
             <!-- <span id="rangeValue">0</span>-->
-            <Input class="range" type="range" name="" value="0" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="cafeRangeSlide(this.value)"></Input>
+            <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="cafeRangeSlide(this.value)"></Input>
         </div>
       </div>
       <br>
 
       <div class = "flexContainer">
         <p class = "toggleLabel"> sugar? </p>
-        <div class = "toggleButton" onclick="this.classList.toggle('active'); playRainSound()"> 
+        <div class = "toggleButton" onclick="this.classList.toggle('active'); if(this.classList.contains('active')){playRainSound();} else (pauseRainSound());"> 
           <div class="innerCircle"> </div>
         </div>
         <div>
             <!-- <span id="rangeValue">0</span>-->
-            <Input class="range" type="range" name="" value="0" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="rainRangeSlide(this.value)"></Input>
+            <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="rainRangeSlide(this.value)"></Input>
         </div>
       </div>
     </div>
@@ -374,8 +374,14 @@
         //else:
         //  cafeAudio.pause();  this.classList.toggle('active')
       }
+      function pauseCafeSound() {
+        cafeAudio.pause();
+      }
       function playRainSound() {
         rainAudio.play();
+      }
+      function pauseRainSound() {
+        rainAudio.pause();
       }
       function cafeRangeSlide( value) {
           cafeAudio.volume = value/100.0;      }
@@ -384,58 +390,6 @@
       }
     </script>
 
-
-    <!--
-    <div class="coffeeBlock">
-        <div class="coffee" style = "--c:#d29473;">
-            <div class="vapour">
-                <span style="--v:1;"></span>
-                <span style="--v:2;"></span>
-                <span style="--v:5;"></span>
-                <span style="--v:4;"></span>
-                <span style="--v:6;"></span>
-                <span style="--v:19;"></span>
-                <span style="--v:7;"></span>
-                <span style="--v:8;"></span>
-                <span style="--v:9;"></span>
-                <span style="--v:10;"></span>
-                <span style="--v:11;"></span>
-                <span style="--v:18;"></span>
-            </div>
-        </div>
-        <div class="lid"></div>
-        <div class="togocup">        </div>
-        <div class="bottom"></div>
-    </div>
-  -->
-
-
-<!--
-
-    <div id ="myContainer">
-      <div id ="myAnimation"></div>
-    </div>
-
-
-    <script>
-      var id = null;
-      function myMove() {
-        var elem = document.getElementById("myAnimation");   
-        var pos = 0;
-        clearInterval(id);
-        id = setInterval(frame, 10);
-        function frame() {
-          if (pos == 350) {
-            clearInterval(id);
-          } else {
-            pos++; 
-            elem.style.top = pos + 'px'; 
-            elem.style.left = pos + 'px'; 
-          }
-        }
-      }
-    </script>
--->
 
   </body>
 </html>

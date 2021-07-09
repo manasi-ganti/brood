@@ -25,11 +25,19 @@ body {
 }
 
 #soundContainer {
-    position: relative;
-    left: 650px;
-    /*display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px; */
+  position: relative;
+  left: 67%;
+  bottom: 15%;
+  /*display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px; */
+}
+
+#musicContainer {
+  position: relative;
+  left: 67%;
+  bottom: 21%;
+
 }
 
 .flexContainer {
@@ -133,15 +141,15 @@ body {
 
 
 .coffeeBlock {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    left: 70%;
+    top: -10%;
+    /*transform: translate(-50%, -50%); */
     width: 250px;
 }
 
 .coffee {
-    background-color: #d29473; /*#501E03;*/
+    background-color: var(--c); /* #d29473; #501E03;*/
     height: 20px;
     border-radius: 50%;
     z-index: 99;
@@ -157,7 +165,7 @@ body {
     border: 8px solid #ddd;
     z-index: 9;
     position: relative;
-    /*box-shadow: 0 1px 3px 0 rgb(0 0 0 / 51%);   if togo*/
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 51%);
 }
 
 .togocup {
@@ -166,8 +174,8 @@ body {
     height: 300px;
     width: 100%;
     max-width: 240px;
-    /* border-bottom-left-radius: 30%;
-    border-bottom-right-radius: 30%; */
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
     clip-path: polygon(50% 250%, 0 0, 100% 0);
 }
 
@@ -202,7 +210,7 @@ body {
     z-index: 9;
     position: relative;
     width: 144px;
-    margin: -20px auto 0; /*-10 if togo*/
+    margin: -15px auto 0; /*-20 if not togo*/
 }
 
 .vapour {
@@ -262,6 +270,7 @@ body {
 
 }
 
+/*toggle buttons*/
 .toggleLabel{
     margin-top: 10px; 
     margin-right: 5px; 
@@ -292,6 +301,61 @@ body {
 .toggleButton.active > .innerCircle{
     margin-left:40px;
 }
+
+
+/*dropdown menu*/
+.dropButton {
+  background-color: #e9be9b;
+  color: #014421;
+  padding: 16px;
+  font-size: 16px;
+  border-width: 1px;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Montserrat';
+  width: 275px;
+  transition: all 0.2s;
+}
+
+/* Dropdown button on hover & focus */
+.dropButton:hover, .dropButton:focus {
+  background-color:#014421;
+  color:#e9be9b;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdownContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Montserrat';
+}
+
+/* Change color of dropdown links on hover */
+.dropdownContent a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
 
 
 /* volume slider*/

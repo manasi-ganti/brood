@@ -15,10 +15,9 @@ If you don't want to go even touch Terminal/Command line, from here you can just
 
 
 #### 2. Set up local HTTP server.
-Check what Python version you have. `python -v`
 Open your Terminal app and navigate to the downloaded folder: `cd Downloads/brood-main`
-If your Python version is less than 3: `python -m SimpleHTTPServer`
-If your Python version is greater than 3: `python3 -m http.server`
+Start the HTTP server: `python -m SimpleHTTPServer`
+(If you have Python 3: `python3 -m http.server`)
 
 #### 3. Visit website.
 Go to http://localhost:8000/ in your browser. Most of the functionality is pretty straightforward. The videoId is the id of a youtube video (the stuff after "?v=" in the link). 

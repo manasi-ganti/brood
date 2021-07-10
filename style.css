@@ -1,7 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Yesteryear&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39&display=swap');
+/*@import url("fonts/Lucidity-Condensed/style.css")*/
+@charset "UTF-8";
+:root {
+  --lightgreen: #9b9a16;
+  --lightyellow: #f9ea9a;
+  --brown: #5d3a00;
+  --brown2:#854316;
+  --brown3: #cd8246;
+  --cream:#f9ddc5;
 
+  --darkgreen: #014421;
+  --vanilla: #e9be9b;
+  --light: #9f5754;
+  --dark: #684242;
+  --city: #7d4448;
+  --italian: #492233;
+  --caramel: #d29573;
+  --cinnamon: #be7261;
+}
 
 * {
     padding: 0;
@@ -9,25 +27,46 @@
 }
 
 body {
-    background-color: #e9be9b;
-    width: 100%;
-    height: 100vh;
-    position: relative;
+  background-color: var(--cream);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+@font-face {
+  font-family: 'Lucidity';
+  src: local('Lucidity Condensed'), local('Lucidity-Condensed'),
+      /*url('fonts/Lucidity-Condensed/Lucidity-Condensed.woff2') format('woff2'),
+      url('fonts/Lucidity-Condensed/Lucidity-Condensed.woff') format('woff'),*/
+      url('fonts/Lucidity-Condensed/Lucidity-Condensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sceageus';
+  src: local('Sceageus'),
+      /*url('fonts/Sceageus/Sceageus.woff') format('woff'),*/
+      url('fonts/Sceageus/Sceageus.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
-
+/*
 #myAnimation {
   width: 50px;
   height: 50px;
   position: absolute;
   background-color: red;
 }
+*/
 
 #soundContainer {
   position: relative;
-  left: 67%;
-  bottom: 15%;
+  /*left: 67%;
+  bottom: 15%;*/
+  font-family: 'Lucidity';
+  font-size:21px;
   /*display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px; */
@@ -37,7 +76,6 @@ body {
   position: relative;
   left: 67%;
   bottom: 21%;
-
 }
 
 .flexContainer {
@@ -121,7 +159,7 @@ body {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--lightgreen);/*rgba(0, 0, 0, 0.8);*/
 }
 
 /* Add a transparency effect for thumnbail images */
@@ -138,18 +176,18 @@ body {
 
 
 
-
+/*
 
 .coffeeBlock {
     position: relative;
     left: 70%;
     top: -10%;
-    /*transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
     width: 250px;
 }
 
 .coffee {
-    background-color: var(--c); /* #d29473; #501E03;*/
+    background-color: var(--c);
     height: 20px;
     border-radius: 50%;
     z-index: 99;
@@ -210,8 +248,9 @@ body {
     z-index: 9;
     position: relative;
     width: 144px;
-    margin: -15px auto 0; /*-20 if not togo*/
+    margin: -15px auto 0; -20 if not togo
 }
+*/
 
 .vapour {
     position: relative;
@@ -274,13 +313,14 @@ body {
 .toggleLabel{
     margin-top: 10px; 
     margin-right: 5px; 
-    font-family: 'Montserrat';
+    font-family: 'Lucidity';
+    font-size:16px;
 }
 
 .toggleButton {
     width:70px;
     height:30px;
-    background: #684242;
+    background: var(--brown);
     border-radius:30px;
     padding:5px;
     transition: all 300ms ease-in-out;
@@ -295,32 +335,74 @@ body {
 }
 
 .toggleButton.active {
-    background: #492233;
+    background: var(--brown2);
 }
 
 .toggleButton.active > .innerCircle{
     margin-left:40px;
 }
 
+/* board */
+.board {
+  font-family: "Lucidity";
+  font-size: 1.2rem;
+  letter-spacing: .15em;
+  /*text-transform: uppercase;*/
+  line-height: 1.5;
+  text-shadow: 1px 1px #666, 3px 3px #000;
+  margin-top: 0px;
+  
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  overflow: hidden;
+  color: var(--lightyellow);
+  border: 10px solid var(--brown);
+  
+  background: linear-gradient( #0e0e0e 65%, #030303 66%) top .03em center / 100% .30em repeat-y; /*url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e5ae09b0-a69f-4795-a0e8-6cb6a65ebd31/d8dbnac-4e140102-df75-48f0-9c53-880cce859497.jpg/v1/fill/w_1192,h_670,q_70,strp/chalkboard_texture_mc2015_by_mattiamc_d8dbnac-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvZTVhZTA5YjAtYTY5Zi00Nzk1LWEwZTgtNmNiNmE2NWViZDMxXC9kOGRibmFjLTRlMTQwMTAyLWRmNzUtNDhmMC05YzUzLTg4MGNjZTg1OTQ5Ny5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.EQy0zW4hogAprYLGDlrDvT-LHNKTf5koGvuhdw2-80E');*/
+  box-shadow: 
+0px -1px 0px 2px #aaa, 
+0 -7px 5px -5px #000, 
+0 -15px 30px -15px #000, 
+0 3px 4px -2px #000, 
+-60px 30px 70px -70px #000, 
+70px 30px 70px -70px #000, 
+0px 200px 20px rgba(#fff, .05),
+inset 0 0 25px #000, 
+inset 0 0 5px #000;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.drinkButton {
+  font-family: 'Lucidity';
+  font-size: 18px;
+}
+
+.drinkButton:hover, .drinkButton:focus {
+  color:var(--brown2);
+}
 
 /*dropdown menu*/
 .dropButton {
-  background-color: #e9be9b;
-  color: #014421;
+  background-color: var(--lightyellow);
+  color: var(--brown);
   padding: 16px;
-  font-size: 16px;
+  font-size: 20px;
   border-width: 1px;
   cursor: pointer;
   text-align: center;
-  font-family: 'Montserrat';
+  font-family: 'Sceageus';
   width: 275px;
   transition: all 0.2s;
 }
 
 /* Dropdown button on hover & focus */
 .dropButton:hover, .dropButton:focus {
-  background-color:#014421;
-  color:#e9be9b;
+  background-color:var(--brown);
+  color:var(--lightyellow);
 }
 
 
@@ -334,7 +416,7 @@ body {
 .dropdownContent {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -346,7 +428,7 @@ body {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  font-family: 'Montserrat';
+  font-family: 'Lucidity';
 }
 
 /* Change color of dropdown links on hover */
@@ -368,7 +450,7 @@ body {
   font-size: 24px;
   color: black;
   font-weight: 400;
-  font-family: 'Montserrat';
+  font-family: 'Lucidity';
 }
 .range {
   width: 100px;
@@ -379,7 +461,7 @@ body {
   border-radius: 15px;
   overflow: hidden;
   padding: 5px;
-  margin-left: 20px;
+  margin-left: 9%;
   margin-top: 7px;
   /*box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);*/
 }
@@ -388,10 +470,10 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #d29473;
+  background: #000;/* var(--brown); /*#000; var(--lightyellow);*/
   cursor: pointer;
-  border: 4px solid #333;
-  box-shadow: -407px 0 0 400px #d29473;
+  border: 4px solid #000;/*var(--brown);*/
+  box-shadow: -407px 0 0 400px var(--lightgreen);
 }
 
 

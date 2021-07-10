@@ -24,7 +24,7 @@
 
   <body>
 
-    <h1 style= "font-family: 'Montserrat'; font-size:36px; text-align: center;"> brood (brewed) </h1>
+    <h1 style= "font-family:'Sceageus'; font-size:36px; text-align: center; margin:15px;"> brood</h1>
     <br>
     <div id= "myContainer" class="imageContainer" style="--b:url(https://3tsll33cscvk11pae33oze51-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/seattle-top-coffee-shops-victrola.png);--w:600px;--h:400px;">
       <div id = "steam" class="vapour" style="--l:260px; --t:120px">
@@ -65,7 +65,7 @@
     <br>
     <div class="shop" style="--t:400px;--w:600px">
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <div style = "margin: auto; width:50%; font-family: 'Montserrat'; font-size:18px"> CHOOSE YOUR COFFEE SHOP </div>
+      <div style = "margin: auto; width:39%; font-family: 'Lucidity'; font-size:20px"> CHOOSE YOUR COFFEE SHOP </div>
       <!-- <button onclick="changeShop()" >Click Me</button>  -->
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
@@ -115,35 +115,57 @@
     </script>
 
     <div id="musicContainer">
-      <p class="toggleLabel"> Your order: </p>
-      <br>
+      <!-- <p class="toggleLabel"> Your order: </p> -->
+      <div class="board">
+        <p style="font-family: 'Sceageus'; color: var(--lightgreen); font-size: 1.4rem;"> drinks </p>
+        <p class="drinkButton" onclick="onDrinkClick('yUpl_HQrBnM')"><u>latte</u> (lofi)</p>
+        <p class="drinkButton" onclick="onDrinkClick('prtmoOfk28w')"><u>cappucino</u> (jazz)</p>
+        <p class="drinkButton" onclick="onDrinkClick('2QcwuvYKdeE')"><u>tea</u> (classical)</p>
+        <p class="drinkButton" onclick="onDrinkClick('1l8sMIVFSoM')"><u>mocha</u> (indie??)</p>
+        <p class="drinkButton" onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> 
+          <label for="YouTube-video-id"> <u>custom</u></label>:
+          <input id="YouTube-video-id" style="margin-left:5px; font-family: 'Libre Barcode';" type="text" value="yUpl_HQrBnM" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId();" readonly="true">
+        </p>
+        <div id="YouTube-player" style="position: absolute;top: -9999px; left: -9999px;"></div>
+        <br>
+        <span style="white-space: nowrap;">
+          <Input class="range" style ="margin:0;" type="range" name="" value="50" min="0" max="100" onChange="youTubePlayerVolumeChange(this.value)"></Input> 
+          <br>
+          <button onclick="youTubePlayerPlay();">Play</button>
+          <button onclick="youTubePlayerPause();">Pause</button>
+          <!-- <button onclick="youTubePlayerSkip();">Skip</button> -->
+        </span>
+      </div>
 
-      <div class="dropdown">
-        <button onclick="myFunction()" class="dropButton">drink</button>
-        <div id="myDropdown" class="dropdownContent">
-          <a onclick = "document.getElementById('YouTube-video-id').value='yUpl_HQrBnM';youTubePlayerChangeVideoId();youTubePlayerPlay();"> latte (lofi) </a>
-          <a onclick = "document.getElementById('YouTube-video-id').value='prtmoOfk28w';youTubePlayerChangeVideoId();youTubePlayerPlay();"> cappuccino (jazz) </a> <!-- VMAPTo7RVCo -->
-          <a onclick = "document.getElementById('YouTube-video-id').value='ASrsms68wks';youTubePlayerChangeVideoId();youTubePlayerPlay();"> mocha () </a>  <!-- https://youtu.be/ASrsms68wks https://youtu.be/1l8sMIVFSoM    https://youtu.be/4_6_D85wX9M--> 
-          <a onclick = "document.getElementById('YouTube-video-id').value='2QcwuvYKdeE';youTubePlayerChangeVideoId();youTubePlayerPlay();"> tea (classical) </a>  <!-- https://youtu.be/Ie5koh4qvJc   https://youtu.be/GQMNer3PwUc-->
-          <a onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> custom order </a>
+      <br>
+      <div id="soundContainer">
+
+        <div class = "flexContainer">
+          <p class = "toggleLabel"> milk? &nbsp; </p>
+          <div class = "toggleButton" onclick="this.classList.toggle('active'); if(this.classList.contains('active')){playCafeSound();} else (pauseCafeSound());"> 
+            <div class="innerCircle"> </div>
+          </div>
+          <div>
+              <!-- <span id="rangeValue">0</span>-->
+              <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="cafeRangeSlide(this.value)"></Input>
+          </div>
+        </div>
+        <br>
+
+        <div class = "flexContainer">
+          <p class = "toggleLabel"> sugar? </p>
+          <div class = "toggleButton" onclick="this.classList.toggle('active'); if(this.classList.contains('active')){playRainSound();} else (pauseRainSound());"> 
+            <div class="innerCircle"> </div>
+          </div>
+          <div>
+              <!-- <span id="rangeValue">0</span>-->
+              <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="rainRangeSlide(this.value)"></Input>
+          </div>
         </div>
       </div>
-      <br>
-      <div id="YouTube-player" style="position: absolute;top: -9999px; left: -9999px;"></div>
-      <span style="white-space: nowrap;">
-        <label for="YouTube-video-id">videoId</label>:
-        <input id="YouTube-video-id" type="text" value="yUpl_HQrBnM" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId();" readonly="true">
-        <button onclick="youTubePlayerPlay();">Play</button>
-        <button onclick="youTubePlayerPause();">Pause</button>
-        <!-- <button onclick="youTubePlayerSkip();">Skip</button> -->
-        <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="youTubePlayerVolumeChange(this.value)"></Input> 
-      </span>
-      <div> </div>
       <!-- <input id="YouTube-video-id" type="text" value="yG0oBPtyNb0" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId();"> -->
-      <br>
 
     </div>
-
     <script>
       var youTubePlayer;
       /**
@@ -295,8 +317,25 @@
           }
       }
 
-
+      function onDrinkClick(v_id){
+        document.getElementById('YouTube-video-id').value=v_id;
+        youTubePlayerChangeVideoId();
+        youTubePlayerPlay();
+        document.getElementById('YouTube-video-id').readOnly=true;
+      }
     </script>
+
+    <!--
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropButton">drink</button>
+        <div id="myDropdown" class="dropdownContent">
+          <a onclick = "document.getElementById('YouTube-video-id').value='yUpl_HQrBnM';youTubePlayerChangeVideoId();youTubePlayerPlay();"> latte (lofi) </a>
+          <a onclick = "document.getElementById('YouTube-video-id').value='prtmoOfk28w';youTubePlayerChangeVideoId();youTubePlayerPlay();"> cappuccino (jazz) </a> 
+          <a onclick = "document.getElementById('YouTube-video-id').value='1l8sMIVFSoM';youTubePlayerChangeVideoId();youTubePlayerPlay();"> mocha () </a> 
+          <a onclick = "document.getElementById('YouTube-video-id').value='2QcwuvYKdeE';youTubePlayerChangeVideoId();youTubePlayerPlay();"> tea (classical) </a>  
+          <a onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> custom order </a>
+        </div>
+      </div>
 
     <script>
       /* When the user clicks on the button,
@@ -319,44 +358,8 @@
         }
       }
     </script>
-
+    -->
     
-    <div id="soundContainer">
-
-      <div class = "flexContainer">
-        <p class = "toggleLabel"> milk?  .</p>
-        <div class = "toggleButton" onclick="this.classList.toggle('active'); if(this.classList.contains('active')){playCafeSound();} else (pauseCafeSound());"> 
-          <div class="innerCircle"> </div>
-        </div>
-        <div>
-            <!-- <span id="rangeValue">0</span>-->
-            <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="cafeRangeSlide(this.value)"></Input>
-        </div>
-      </div>
-      <br>
-
-      <div class = "flexContainer">
-        <p class = "toggleLabel"> sugar? </p>
-        <div class = "toggleButton" onclick="this.classList.toggle('active'); if(this.classList.contains('active')){playRainSound();} else (pauseRainSound());"> 
-          <div class="innerCircle"> </div>
-        </div>
-        <div>
-            <!-- <span id="rangeValue">0</span>-->
-            <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="rainRangeSlide(this.value)"></Input>
-        </div>
-      </div>
-    </div>
-
-    <!--
-    <div data-video="VIDEO_ID"  
-            data-autoplay="0"         
-            data-loop="1"             
-            id="youtube-audio">
-     </div>
-
-   <script src="https://www.youtube.com/iframe_api"></script>
-   <script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
-  -->
     
     <script>
       var elem = document.getElementById("soundContainer");   
@@ -365,14 +368,7 @@
       var rainAudio = new Audio('NoisesDotOnline_Rain.wav');
       rainAudio.loop = true;
       function playCafeSound() {
-        //var button = document.getElementsByClassName("toggleButton");
-        //button.classList.toggle('active')
-        //if(button.classList.contains('active')):
         cafeAudio.play();
-        //if(button.classList.contains('active') === false):
-        //  cafeAudio.pause();
-        //else:
-        //  cafeAudio.pause();  this.classList.toggle('active')
       }
       function pauseCafeSound() {
         cafeAudio.pause();

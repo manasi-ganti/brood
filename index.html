@@ -2,23 +2,24 @@
 <html lang="en">
   <head>
         <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="main.js"> </script>
         <!-- sources:
           https://www.youtube.com/watch?v=4Pa39XplV9E
           https://github.com/ruvictor/starbucks-hot-coffee
           https://www.labnol.org/internet/youtube-audio-player/26740/
           <div>Background audio track provided by <a href='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</a> under a <a href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</a> license.</div>
+          https://codepen.io/anyssa/pen/PoNBMxJ
         -->
         <!-- for later:
-          https://codepen.io/chrisgannon/pen/jqeWBr
+          https://codepen.io/chrisgannon/pen/jqeWBr   -- toggle
+          https://codepen.io/gowriprasanthvm/pen/zzareW --toggle
           https://dev.to/gscode/20-css-buttons-4cni
-          https://codepen.io/coswise/pen/abOBJJB
-          https://codepen.io/gowriprasanthvm/pen/zzareW
-          https://codepen.io/afalchi82/pen/aNXjgb
-          https://codepen.io/marijoha/pen/zKjvEw
-          https://codepen.io/Aoyue/pen/rLExYX
-          https://codepen.io/RedStarZOn/pen/GuriA
-          https://codepen.io/anyssa/pen/PoNBMxJ
+          https://codepen.io/coswise/pen/abOBJJB      -- radio buttons
+          https://codepen.io/afalchi82/pen/aNXjgb     --dropdown
+          https://codepen.io/marijoha/pen/zKjvEw     -- dropdown
+          https://codepen.io/Aoyue/pen/rLExYX       -- dropdown
+          https://codepen.io/RedStarZOn/pen/GuriA    -- dropdown
         -->
   </head>
 
@@ -121,19 +122,18 @@
         <p class="drinkButton" onclick="onDrinkClick('yUpl_HQrBnM')"><u>latte</u> (lofi)</p>
         <p class="drinkButton" onclick="onDrinkClick('prtmoOfk28w')"><u>cappucino</u> (jazz)</p>
         <p class="drinkButton" onclick="onDrinkClick('2QcwuvYKdeE')"><u>tea</u> (classical)</p>
-        <p class="drinkButton" onclick="onDrinkClick('1l8sMIVFSoM')"><u>mocha</u> (indie??)</p>
-        <p class="drinkButton" onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> 
+        <p class="drinkButton" onclick="onDrinkClick('ASrsms68wks')"><u>mocha</u> (indie??)</p>
+        <p class="drinkButton" style="white-space:nowrap" onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> 
           <label for="YouTube-video-id"> <u>custom</u></label>:
-          <input id="YouTube-video-id" style="margin-left:5px; font-family: 'Libre Barcode';" type="text" value="yUpl_HQrBnM" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId();" readonly="true">
+          <input class="textbox" id="YouTube-video-id" type="text" value="yUpl_HQrBnM" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId(); youTubePlayerPlay();" readonly="true">
         </p>
         <div id="YouTube-player" style="position: absolute;top: -9999px; left: -9999px;"></div>
         <br>
         <span style="white-space: nowrap;">
+          <button class ="btn" onclick="youTubePlayerPlay();"><i class="fa fa-play"> </i></button>
           <Input class="range" style ="margin:0;" type="range" name="" value="50" min="0" max="100" onChange="youTubePlayerVolumeChange(this.value)"></Input> 
-          <br>
-          <button onclick="youTubePlayerPlay();">Play</button>
-          <button onclick="youTubePlayerPause();">Pause</button>
-          <!-- <button onclick="youTubePlayerSkip();">Skip</button> -->
+          <button class ="btn" onclick="youTubePlayerPause();"><i class="fa fa-pause"> </i></button>
+
         </span>
       </div>
 

@@ -350,7 +350,7 @@ body {
   /*text-transform: uppercase;*/
   line-height: 1.5;
   text-shadow: 1px 1px #666, 3px 3px #000;
-  margin-top: 0px;
+  margin-top: 15px;
   
   width: 250px;
   height: 250px;
@@ -476,5 +476,36 @@ inset 0 0 5px #000;
   box-shadow: -407px 0 0 400px var(--lightgreen);
 }
 
+/* play/pause buttons */
+.btn {
+  border: none; /* Remove borders */
+  background: transparent;
+  color: var(--lightyellow); /* White text */
+  font-family: 'Lucidity';
+  font-size: 18px;
+  line-height: 15px;
+  padding: 10px 10px;
+  margin:13px;
+  cursor: pointer; /* Mouse pointer on hover */
+  transform: translate(0, -10%);
+}
+
+.btn:hover {
+  color:var(--brown2);
+}
 
 
+
+.textbox {
+  color: var(--lightgreen);
+  background: transparent;
+  font-family: 'Lucidity';
+  margin-left:5px;
+  border-style: solid;
+  border-color: transparent;
+  outline:0;
+  font-size:17px;
+  width: 50%; /*58%*/
+  border: 0;
+  border-bottom: 2px solid var(--lightyellow);
+}

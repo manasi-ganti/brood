@@ -25,7 +25,7 @@
 
   <body>
 
-    <h1 style= "font-family:'Sceageus'; font-size:36px; text-align: center; margin:15px;"> brood</h1>
+    <h1 style= "font-family:'Sceageus'; font-size:42px; margin:15px; text-align: center; font-weight: bold;"> brood</h1>
     <br>
     <div id= "myContainer" class="imageContainer" style="--b:url(https://3tsll33cscvk11pae33oze51-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/seattle-top-coffee-shops-victrola.png);--w:600px;--h:400px;">
       <div id = "steam" class="vapour" style="--l:260px; --t:120px">
@@ -64,56 +64,13 @@
 
 
     <br>
-    <div class="shop" style="--t:400px;--w:600px">
+    <div class="shop" style="--t:400px;--w:600px;   transform: translate(5%, -0%);
+">
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <div style = "margin: auto; width:39%; font-family: 'Lucidity'; font-size:20px"> CHOOSE YOUR COFFEE SHOP </div>
       <!-- <button onclick="changeShop()" >Click Me</button>  -->
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-
-    <script>
-      /*
-      function changeShop() {
-        var elem = document.getElementById("myContainer");   
-        // elem.style.background="url(https://3tsll33cscvk11pae33oze51-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/seattle-top-coffee-shops-victrola.png)";
-        //elem.style.width="600px";
-        //elem.style.height="400px"; 
-        elem.classList.toggle("imageContainer1");
-        elem.classList.toggle("imageContainer2");
-      }
-      */
-
-      var slideIndex = 1;
-      showSlides(slideIndex);
-
-      // Next/previous controls
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-
-      // Thumbnail image controls
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("imageContainer");
-        var dots = document.getElementsByClassName("demo");
-        var captionText = document.getElementById("caption");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        captionText.innerHTML = dots[slideIndex-1].alt;
-      }
-    </script>
 
     <div id="musicContainer">
       <!-- <p class="toggleLabel"> Your order: </p> -->
@@ -122,7 +79,7 @@
         <p class="drinkButton" onclick="onDrinkClick('yUpl_HQrBnM')"><u>latte</u> (lofi)</p>
         <p class="drinkButton" onclick="onDrinkClick('prtmoOfk28w')"><u>cappucino</u> (jazz)</p>
         <p class="drinkButton" onclick="onDrinkClick('2QcwuvYKdeE')"><u>tea</u> (classical)</p>
-        <p class="drinkButton" onclick="onDrinkClick('ASrsms68wks')"><u>mocha</u> (indie??)</p>
+        <p class="drinkButton" onclick="onDrinkClick('cPoKkK--jBc')"><u>mocha</u> (indie??)</p>
         <p class="drinkButton" style="white-space:nowrap" onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> 
           <label for="YouTube-video-id"> <u>custom</u></label>:
           <input class="textbox" id="YouTube-video-id" type="text" value="yUpl_HQrBnM" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId(); youTubePlayerPlay();" readonly="true">
@@ -166,6 +123,49 @@
       <!-- <input id="YouTube-video-id" type="text" value="yG0oBPtyNb0" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId();"> -->
 
     </div>
+    <script>
+      /*
+      function changeShop() {
+        var elem = document.getElementById("myContainer");   
+        // elem.style.background="url(https://3tsll33cscvk11pae33oze51-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/seattle-top-coffee-shops-victrola.png)";
+        //elem.style.width="600px";
+        //elem.style.height="400px"; 
+        elem.classList.toggle("imageContainer1");
+        elem.classList.toggle("imageContainer2");
+      }
+      */
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("imageContainer");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+    </script>
     <script>
       var youTubePlayer;
       /**

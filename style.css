@@ -28,7 +28,7 @@
 
 body {
   background-color: var(--cream);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: relative;
 }
@@ -73,9 +73,8 @@ body {
 }
 
 #musicContainer {
-  position: relative;
-  left: 67%;
-  bottom: 21%;
+  position: absolute;
+  transform: translate(225%, -28%);
 }
 
 .flexContainer {
@@ -86,9 +85,6 @@ body {
 }
 
 
-#myContainer {
- /*position: relative;*/
-}
 
 .shop {
     position: relative;
@@ -103,7 +99,7 @@ body {
     width: var(--w);
     height: var(--h);
     position: absolute;
-    transform: translate(-15%, -0%);
+    transform: translate(-10%, -0%);
 }
 
 
@@ -350,7 +346,7 @@ body {
   /*text-transform: uppercase;*/
   line-height: 1.5;
   text-shadow: 1px 1px #666, 3px 3px #000;
-  margin-top: 15px;
+  margin-top: 5px;
   
   width: 250px;
   height: 250px;

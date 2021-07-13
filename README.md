@@ -5,7 +5,8 @@ current features:
 ambient noise, two coffee shop backgrounds, music (including input for custom music)
 
 features to come:
-skip button and more music options, more coffee shop backgrounds, more ambient noise options, maybe a pomodoro timer, an actual live site would be cool
+skip button and more music options, more coffee shop backgrounds, more ambient noise options, maybe a pomodoro timer, ~~an actual live site would be cool~~. 
+YO WE HAVE AN ACTUAL LIVE SITE: https://manasi-ganti.github.io/brood/
 
 
 ## Instructions

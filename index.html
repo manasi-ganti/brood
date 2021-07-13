@@ -3,28 +3,18 @@
   <head>
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="main.js"> </script>
         <!-- sources:
           https://www.youtube.com/watch?v=4Pa39XplV9E
           https://github.com/ruvictor/starbucks-hot-coffee
-          https://www.labnol.org/internet/youtube-audio-player/26740/
           <div>Background audio track provided by <a href='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</a> under a <a href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</a> license.</div>
           https://codepen.io/anyssa/pen/PoNBMxJ
-        -->
-        <!-- for later:
-          https://codepen.io/chrisgannon/pen/jqeWBr   -- toggle
-          https://codepen.io/gowriprasanthvm/pen/zzareW --toggle
-          https://dev.to/gscode/20-css-buttons-4cni
-          https://codepen.io/coswise/pen/abOBJJB      -- radio buttons
-          https://codepen.io/afalchi82/pen/aNXjgb     --dropdown
-          https://codepen.io/marijoha/pen/zKjvEw     -- dropdown
-          https://codepen.io/Aoyue/pen/rLExYX       -- dropdown
-          https://codepen.io/RedStarZOn/pen/GuriA    -- dropdown
+          https://codepen.io/OPiMedia/details/WrzLQw
+          https://kaeruct.github.io/posts/how-to-use-the-youtube-js-api-to-play-music-in-the-background.html
+          https://www.labnol.org/internet/youtube-audio-player/26740/
         -->
   </head>
 
   <body>
-
     <h1 style= "font-family:'Sceageus'; font-size:42px; margin:15px; text-align: center; font-weight: bold;"> brood</h1>
     <br>
     <div id= "myContainer" class="imageContainer" style="--b:url(https://3tsll33cscvk11pae33oze51-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/seattle-top-coffee-shops-victrola.png);--w:600px;--h:400px;">
@@ -68,18 +58,16 @@
 ">
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <div style = "margin: auto; width:39%; font-family: 'Lucidity'; font-size:20px"> CHOOSE YOUR COFFEE SHOP </div>
-      <!-- <button onclick="changeShop()" >Click Me</button>  -->
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
     <div id="musicContainer">
-      <!-- <p class="toggleLabel"> Your order: </p> -->
       <div class="board">
         <p style="font-family: 'Sceageus'; color: var(--lightgreen); font-size: 1.4rem;"> drinks </p>
         <p class="drinkButton" onclick="onDrinkClick('yUpl_HQrBnM')"><u>latte</u> (lofi)</p>
         <p class="drinkButton" onclick="onDrinkClick('prtmoOfk28w')"><u>cappucino</u> (jazz)</p>
         <p class="drinkButton" onclick="onDrinkClick('2QcwuvYKdeE')"><u>tea</u> (classical)</p>
-        <p class="drinkButton" onclick="onDrinkClick('cPoKkK--jBc')"><u>mocha</u> (indie??)</p>
+        <p class="drinkButton" onclick="onDrinkClick('cPoKkK--jBc')"><u>mocha</u> (alternative)</p>
         <p class="drinkButton" style="white-space:nowrap" onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> 
           <label for="YouTube-video-id"> <u>custom</u></label>:
           <input class="textbox" id="YouTube-video-id" type="text" value="yUpl_HQrBnM" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId(); youTubePlayerPlay();" readonly="true">
@@ -103,7 +91,6 @@
             <div class="innerCircle"> </div>
           </div>
           <div>
-              <!-- <span id="rangeValue">0</span>-->
               <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="cafeRangeSlide(this.value)"></Input>
           </div>
         </div>
@@ -115,26 +102,14 @@
             <div class="innerCircle"> </div>
           </div>
           <div>
-              <!-- <span id="rangeValue">0</span>-->
               <Input class="range" type="range" name="" value="50" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="rainRangeSlide(this.value)"></Input>
           </div>
         </div>
       </div>
-      <!-- <input id="YouTube-video-id" type="text" value="yG0oBPtyNb0" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId();"> -->
 
     </div>
-    <script>
-      /*
-      function changeShop() {
-        var elem = document.getElementById("myContainer");   
-        // elem.style.background="url(https://3tsll33cscvk11pae33oze51-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/seattle-top-coffee-shops-victrola.png)";
-        //elem.style.width="600px";
-        //elem.style.height="400px"; 
-        elem.classList.toggle("imageContainer1");
-        elem.classList.toggle("imageContainer2");
-      }
-      */
-
+    <script type="text/javascript">
+      /* coffee shop slides */
       var slideIndex = 1;
       showSlides(slideIndex);
 
@@ -166,11 +141,10 @@
         captionText.innerHTML = dots[slideIndex-1].alt;
       }
     </script>
-    <script>
+    <script type="text/javascript">
+      /*music player */
       var youTubePlayer;
-      /**
-       * Main
-       */
+
       (function () {
           'use strict';
 
@@ -243,11 +217,7 @@
             }
           });
       }
-      /**
-       * Get videoId from the #YouTube-video-id HTML item value,
-       * load this video, pause it
-       * and show new infos.
-       */
+
       function youTubePlayerChangeVideoId() {
           'use strict';
 
@@ -260,18 +230,13 @@
           youTubePlayer.pauseVideo();
       }
 
-      /**
-       * :return: true if the player is active, else false
-       */
+
       function youTubePlayerActive() {
           'use strict';
 
           return youTubePlayer && youTubePlayer.hasOwnProperty('getPlayerState');
       }
 
-      /**
-       * Pause.
-       */
       function youTubePlayerPause() {
           'use strict';
 
@@ -281,9 +246,6 @@
       }
 
 
-      /**
-       * Play.
-       */
       function youTubePlayerPlay() {
           'use strict';
 
@@ -292,9 +254,6 @@
           }
       }
 
-      /**
-       * Stop.
-       */
       function youTubePlayerStop() {
           'use strict';
 
@@ -304,11 +263,7 @@
           }
       }
 
-      /**
-       * Change the volume.
-       *
-       * :param volume: 0 <= number <= 100
-       */
+
       function youTubePlayerVolumeChange(volume) {
           'use strict';
 
@@ -323,45 +278,9 @@
         youTubePlayerPlay();
         document.getElementById('YouTube-video-id').readOnly=true;
       }
-    </script>
 
-    <!--
-      <div class="dropdown">
-        <button onclick="myFunction()" class="dropButton">drink</button>
-        <div id="myDropdown" class="dropdownContent">
-          <a onclick = "document.getElementById('YouTube-video-id').value='yUpl_HQrBnM';youTubePlayerChangeVideoId();youTubePlayerPlay();"> latte (lofi) </a>
-          <a onclick = "document.getElementById('YouTube-video-id').value='prtmoOfk28w';youTubePlayerChangeVideoId();youTubePlayerPlay();"> cappuccino (jazz) </a> 
-          <a onclick = "document.getElementById('YouTube-video-id').value='1l8sMIVFSoM';youTubePlayerChangeVideoId();youTubePlayerPlay();"> mocha () </a> 
-          <a onclick = "document.getElementById('YouTube-video-id').value='2QcwuvYKdeE';youTubePlayerChangeVideoId();youTubePlayerPlay();"> tea (classical) </a>  
-          <a onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> custom order </a>
-        </div>
-      </div>
-
-    <script>
-      /* When the user clicks on the button,
-      toggle between hiding and showing the dropdown content */
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-
-      // Close the dropdown menu if the user clicks outside of it
-      window.onclick = function(event) {
-        if (!event.target.matches('.dropButton')) {
-          var dropdowns = document.getElementsByClassName("dropdownContent");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      }
-    </script>
-    -->
-    
-    
-    <script>
+      /* ambient noise */
+          
       var elem = document.getElementById("soundContainer");   
       var cafeAudio = new Audio('NoisesDotOnline_Cafe.wav');
       cafeAudio.loop = true;
@@ -384,8 +303,6 @@
       function rainRangeSlide( value) {
           rainAudio.volume = value/100.0;
       }
-    </script>
-
-
+    </script>        
   </body>
 </html>

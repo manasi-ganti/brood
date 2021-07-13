@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Yesteryear&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39&display=swap');
-/*@import url("fonts/Lucidity-Condensed/style.css")*/
 @charset "UTF-8";
 :root {
   --lightgreen: #9b9a16;
@@ -52,15 +51,6 @@ body {
 }
 
 
-/*
-#myAnimation {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  background-color: red;
-}
-*/
-
 #soundContainer {
   position: relative;
   /*left: 67%;
@@ -103,31 +93,6 @@ body {
 }
 
 
-.imageContainer1 {
-    background: url(https://3tsll33cscvk11pae33oze51-wpengine.netdna-ssl.com/wp-content/uploads/2014/12/seattle-top-coffee-shops-victrola.png);
-    width: 600px;
-    height: 400px;
-    position: absolute;
-    transform: translate(-50%, -0%);
-    left: 25%;
-}
-.imageContainer2 {
-    background: url(https://ae01.alicdn.com/kf/HTB1m1kkmr1YBuNjSszhq6AUsFXa2/220ml-Ceramic-Coffee-Mug-Simple-Coffee-Cup-Saucer-Set-with-Spoon-Coffee-Shop-Mug.jpg);
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    transform: translate(-50%, -0%);
-    left: 25%;
-}
-.imageContainer3 {
-    background: url(https://st2.depositphotos.com/1875497/6137/i/600/depositphotos_61375725-stock-photo-coffee-mug-in-coffee-shop.jpg);
-    width: 600px;
-    height: 400px;
-    position: absolute;
-    transform: translate(-50%, -0%);
-    left: 25%;
-}
-
 
 /* Next & previous buttons */
 .prev,
@@ -169,84 +134,6 @@ body {
 }
 
 
-
-
-
-/*
-
-.coffeeBlock {
-    position: relative;
-    left: 70%;
-    top: -10%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-}
-
-.coffee {
-    background-color: var(--c);
-    height: 20px;
-    border-radius: 50%;
-    z-index: 99;
-    position: relative;
-    margin: 0 auto -28px;
-    width: 233px;
-}
-
-.lid {
-    background-color: #fff;
-    height: 20px;
-    border-radius: 50%;
-    border: 8px solid #ddd;
-    z-index: 9;
-    position: relative;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 51%);
-}
-
-.togocup {
-    margin: -18px auto 0;
-    background-color: #fff;
-    height: 300px;
-    width: 100%;
-    max-width: 240px;
-    border-bottom-left-radius: 30%;
-    border-bottom-right-radius: 30%;
-    clip-path: polygon(50% 250%, 0 0, 100% 0);
-}
-
-.cup {
-    margin: -18px auto 0;
-    width: 250px;
-    height: 200px;
-    box-sizing: border-box;
-    border: 7px solid #fff;
-    border-radius: 5px 5px 95px 95px;
-    background: #fff;
-    overflow: hidden;
-}
-
-.handle {
-    position: relative;
-    top: 10px;
-    left: 350px;
-    width: 40px;
-    height: 70px;
-    background: transparent;
-    box-sizing: border-box;
-    border: 5px solid #fff;
-    border-radius: 0 25px 80px 0;
-}
-
-
-.bottom {
-    background-color: #fff;
-    height: 20px;
-    border-radius: 50%;
-    z-index: 9;
-    position: relative;
-    width: 144px;
-    margin: -15px auto 0; -20 if not togo
-}
-*/
 
 .vapour {
     position: relative;

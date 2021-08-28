@@ -67,10 +67,10 @@
     <div id="musicContainer">
       <div class="board">
         <p style="font-family: 'Sceageus'; color: var(--lightgreen); font-size: 1.4rem;"> drinks </p>
-        <p class="drinkButton" onclick="onDrinkClick('yUpl_HQrBnM')"><u>latte</u> (lofi)</p>
-        <p class="drinkButton" onclick="onDrinkClick('prtmoOfk28w')"><u>cappucino</u> (jazz)</p>
-        <p class="drinkButton" onclick="onDrinkClick('2QcwuvYKdeE')"><u>tea</u> (classical)</p>
-        <p class="drinkButton" onclick="onDrinkClick('cPoKkK--jBc')"><u>mocha</u> (alternative)</p>
+        <p class="drinkButton" onclick="onDrinkClick('lofi')"><u>latte</u> (lofi)</p>
+        <p class="drinkButton" onclick="onDrinkClick('jazz')"><u>cappucino</u> (jazz)</p>
+        <p class="drinkButton" onclick="onDrinkClick('classical')"><u>tea</u> (classical)</p>
+        <p class="drinkButton" onclick="onDrinkClick('alternative')"><u>mocha</u> (alternative)</p>
         <p class="drinkButton" style="white-space:nowrap" onclick = "document.getElementById('YouTube-video-id').readOnly = false;"> 
           <label for="YouTube-video-id"> <u>custom</u></label>:
           <input class="textbox" id="YouTube-video-id" type="text" value="yUpl_HQrBnM" size="12" pattern="[_\-0-9A-Za-z]{11}" onchange="youTubePlayerChangeVideoId(); youTubePlayerPlay();" readonly="true">
@@ -146,6 +146,34 @@
     </script>
     <script type="text/javascript">
       /*music player */
+
+
+      function onDrinkClick(genre){
+        const lofi = ["yUpl_HQrBnM", "JCaR6hHnM3U", "09Hz6HRUGcc", "iEGFFyv0MH4", "lTRiuFIWV54", "kyvnngAEIpY"];
+        const jazz = ["VMAPTo7RVCo", "prtmoOfk28w"];
+        const classical = ["Ie5koh4qvJc","GQMNer3PwUc","2QcwuvYKdeE", "nHeuZ8EIbSU"];
+        const alternative = ["cPoKkK--jBc","ASrsms68wks", "1l8sMIVFSoM", "4_6_D85wX9M"];
+
+        var video_id;
+        if(genre==='lofi'){
+          video_id = lofi[Math.floor(Math.random()*lofi.length)];
+        }
+        if(genre==='jazz'){
+          video_id = jazz[Math.floor(Math.random()*jazz.length)];
+        }
+        if(genre==='classical'){
+          video_id = classical[Math.floor(Math.random()*classical.length)];
+        }
+        if(genre==='alternative'){
+          video_id = alternative[Math.floor(Math.random()*alternative.length)];
+        }
+
+        document.getElementById('YouTube-video-id').value=video_id;
+        youTubePlayerChangeVideoId();
+        youTubePlayerPlay();
+        document.getElementById('YouTube-video-id').readOnly=true;
+      }
+
       var youTubePlayer;
 
       (function () {
@@ -275,12 +303,6 @@
           }
       }
 
-      function onDrinkClick(v_id){
-        document.getElementById('YouTube-video-id').value=v_id;
-        youTubePlayerChangeVideoId();
-        youTubePlayerPlay();
-        document.getElementById('YouTube-video-id').readOnly=true;
-      }
 
       /* ambient noise */
           

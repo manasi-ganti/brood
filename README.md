@@ -2,7 +2,7 @@
 inspired by imissmycafe.com. 
 
 LIVE WEBSITE AT https://manasi-ganti.github.io/brood/
-(note: music/images take longer to load than when locally run)
+(note: music/images take a couple seconds to load)
 
 current features:
 ambient noise, two coffee shop backgrounds, music (including input for custom music)  

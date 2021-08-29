@@ -5,10 +5,14 @@ LIVE WEBSITE AT https://manasi-ganti.github.io/brood/
 (note: music/images take longer to load than when locally run)
 
 current features:
-ambient noise, two coffee shop backgrounds, music (including input for custom music)
+ambient noise, two coffee shop backgrounds, music (including input for custom music)  
 
-features to come:
-mobile friendly, skip button and more music options, more coffee shop backgrounds, more ambient noise options, maybe a pomodoro timer.
+updates:
+input for custom music added
+more music options added, randomly chosen based on genre when drink name is clicked (that means if you don't like the music, click the 'drink' again and it will reset)
+
+features to come (eventually):
+mobile friendly, more coffee shop backgrounds, more ambient noise options, maybe a pomodoro timer.
 
 ## Instructions to run locally
 ### 1. Download

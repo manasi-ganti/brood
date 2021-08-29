@@ -8,7 +8,7 @@ current features:
 ambient noise, two coffee shop backgrounds, music (including input for custom music)  
 
 updates:
-input for custom music added
+input for custom music added  
 more music options added, randomly chosen based on genre when drink name is clicked (that means if you don't like the music, click the 'drink' again and it will reset)
 
 features to come (eventually):
